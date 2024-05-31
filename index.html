@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCTF DEX</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style_2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Layer 2 Decentralized Exchange</a>
+      <div class="ml-auto">
+        <button id="connectWalletButton" class="btn btn-outline-primary">
+          Connect Wallet
+        </button>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-2 d-md-block bg-light sidebar collapse"
+          id="sidebarMenu"
+        >
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-target="pool-monitor">
+                  <i class="fas fa-tachometer-alt"></i> Pool Monitor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-target="my-asset">
+                  <i class="fab fa-sketch"></i> My Asset
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-target="provide-liquidity">
+                  <i class="fas fa-hand-holding-water"></i> Provide Liquidity
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-target="swap">
+                  <i class="fas fa-exchange-alt"></i> Swap
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-target="info">
+                  <i class="fas fa-info-circle"></i> Info
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="col-md-2 d-md-none bg-light">
+          <button
+            class="btn btn-outline-secondary w-100 mb-2"
+            type="button"
+            data-toggle="collapse"
+            data-target="#sidebarMenu"
+            aria-expanded="false"
+            aria-controls="sidebarMenu"
+          >
+            Menu
+          </button>
+        </div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Dashboard</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Wallet Details</h5>
+                  <p class="card-text" id="txtWalletDetail">
+                    Here you can see your personal wallet details.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="main-content">
+            <div id="pool-monitor" class="content-section">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Pool Monitor</h5>
+                  <p class="card-text">
+                    This section displays the pool monitor details.
+                  </p>
+                  <button
+                    class="btn btn-sm btn-outline-primary"
+                    id="btnPoolReload"
+                  >
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                  <p></p>
+
+                  <!-- Inside the "Pool Monitor" card body -->
+                  <div class="inner-cards">
+                    <div class="row" id="divPoolInnerCardContent">
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <p class="card-text">Line 1 of text</p>
+                            <p class="card-text">Line 2 of text</p>
+                            <p class="card-text">Line 3 of text</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <p class="card-text">Line 1 of text</p>
+                            <p class="card-text">Line 2 of text</p>
+                            <p class="card-text">Line 3 of text</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <p class="card-text">Line 1 of text</p>
+                            <p class="card-text">Line 2 of text</p>
+                            <p class="card-text">Line 3 of text</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="my-asset" class="content-section">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Asset Monitor</h5>
+                  <p class="card-text">
+                    This section displays the your asset token details.
+                  </p>
+                  <button
+                    class="btn btn-sm btn-outline-primary"
+                    id="btnAssetReload"
+                  >
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                  <p></p>
+
+                  <!-- Inside the "Pool Monitor" card body -->
+                  <div class="inner-cards">
+                    <div class="row" id="divAssetInnerCardContent">
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <p class="card-text">Line 1 of text</p>
+                            <p class="card-text">Line 2 of text</p>
+                            <p class="card-text">Line 3 of text</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="provide-liquidity" class="content-section">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Provide Liquidity</h5>
+                  <p class="card-text">
+                    This section provides information about providing liquidity.
+                  </p>
+                  <p class="card-text">
+                    Select a pool and enter the amount to provide liquidity.
+                  </p>
+                  <form id="formAddLiquidity">
+                    <div class="form-group">
+                      <label for="poolSelect">Select Pool</label>
+                      <select class="form-control" id="poolSelect">
+                        <option>Pool 1</option>
+                        <option>Pool 2</option>
+                        <option>Pool 3</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="amountInput">Amount</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inputLiquidityAmount"
+                        placeholder="Enter amount"
+                        min="0"
+                        step="0.000000000000000001"
+                      />
+                    </div>
+                  </form>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="btnAddLiquidity"
+                  >
+                    Add Liquidity
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="swap" class="content-section">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Swap</h5>
+                  <p class="card-text">
+                    This section contains details about swapping.
+                  </p>
+                  <form id="formSwap">
+                    <div class="form-group">
+                      <label for="fromPoolSelect">Token In</label>
+                      <select class="form-control" id="fromPoolSelect">
+                        <option value="pool1">Pool 1</option>
+                        <option value="pool2">Pool 2</option>
+                        <option value="pool3">Pool 3</option>
+                      </select>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inputAmountToSwap"
+                        placeholder="Amount"
+                        min="0"
+                        step="0.000000000000000001"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="toPoolSelect">Token Out</label>
+                      <select class="form-control" id="toPoolSelect">
+                        <option value="pool1">Pool 1</option>
+                        <option value="pool2">Pool 2</option>
+                        <option value="pool3">Pool 3</option>
+                      </select>
+                    </div>
+                  </form>
+                  <button type="button" class="btn btn-info" id="btnGetPrice">
+                    Get Price
+                  </button>
+                  <button type="submit" class="btn btn-primary" id="btnSwap">
+                    Swap
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="info" class="content-section">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Info</h5>
+                  <p class="card-text">
+                    This section provides general information.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="contract.js?v1.3"></script>
+    <script src="app_2.js?v1.4"></script>
+  </body>
+</html>

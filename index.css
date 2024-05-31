@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.sidebar {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding-top: 48px;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-link .fas {
+    margin-right: 8px;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+/* .card {
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+    position: relative;
+} */
+
+.card-title {
+    font-weight: 600;
+    color: #4e73df;
+}
+
+.content-section {
+    display: none;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#btnPoolReload {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#btnAssetReload {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+/* .inner-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inner-cards .card {
+    width: calc(33.33% - 10px); Adjusted to account for margin
+    margin-bottom: 20px;
+}
+
+.inner-cards .card-body {
+    text-align: center;
+} */
+
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        padding-top: 0;
+    }
+}
